@@ -13,7 +13,7 @@ function BarChart() {
 
     const getData = async () => {
         try {
-            const token = localStorage.getItem("token")
+            const token = window.localStorage.getItem("token")
             const config = { headers: { "x-auth-token": token } }
             const response = await findPerDayCountApi(config)
             // console.log(response);

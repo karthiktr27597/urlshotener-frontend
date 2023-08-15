@@ -22,7 +22,6 @@ function App() {
         <Route path="/urlshortener" element={<URLShortener />} />
         <Route path="*" element={<Nopage />} />
         <Route path="/allurls" element={<CreatedURLs />} />
-        {/* <Route path="/header" element={<Header />} /> */}
       </Routes>
 
     </div>

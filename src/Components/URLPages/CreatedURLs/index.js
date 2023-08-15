@@ -16,7 +16,7 @@ function CreatedURLs() {
             const response = await findAllDataApi(config)
             setData([...response.data.data]);
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             if (err.response.data.message === "Invalid Authorization") {
                 const confirmed = window.confirm("Please login to continue")
                 if (confirmed) {

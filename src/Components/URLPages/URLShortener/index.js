@@ -19,7 +19,7 @@ function URLShortener() {
                 const config = { headers: { "x-auth-token": token } }
                 const response = await longURLApi({ longurl: longURL }, config)
                 // console.log(response.data)
-                setShortURL(`http://localhost:9000/${response.data.data}`)
+                setShortURL(`https://urlshortener-backend-qyy5.onrender.com/${response.data.data}`)
             } else {
                 alert("Enter URL")
             }

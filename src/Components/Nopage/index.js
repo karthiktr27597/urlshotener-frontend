@@ -12,8 +12,8 @@ function Nopage() {
 
     return (
         <div>
-            <h1>404 Page Not Found</h1>
-            <Button type={"submit"} name={"Home"} onClick={pageError} />
+            <h1 style={{ textAlign: "center", color: "#007bff" }}>404 Page Not Found</h1>
+            <Button type={"submit"} name={"Home"} onClick={pageError} style={{ width: "100px" }} />
         </div>
     )
 }
