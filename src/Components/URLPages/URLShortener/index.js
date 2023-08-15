@@ -15,8 +15,10 @@ function URLShortener() {
     const handleLongURL = async () => {
         try {
             if (longURL !== "") {
-                const response = await longURLApi({ longurl: longURL })
-               // console.log(response.data)
+                const token = localStorage.getItem("token")
+                const config = { headers: { "x-auth-token": token } }
+                const response = await longURLApi({ longurl: longURL }, config)
+                // console.log(response.data)
                 setShortURL(`http://localhost:9000/${response.data.data}`)
             } else {
                 alert("Enter URL")
@@ -29,6 +31,11 @@ function URLShortener() {
                 if (confirmed) {
                     navigate("/login")
                 }
+            }
+            if (err.response.data.message === "Token expired") {
+                alert("Token expired login again")
+                localStorage.clear()
+                navigate("/login")
             }
         }
 

@@ -6,7 +6,7 @@
     align-items: center;
     background-color: #0065EA;
     padding: 0px 20px;
-    min-width: 480px;
+    min-width: 700px;
 }
 
 .header_left {
@@ -44,7 +44,7 @@
 }
 
 .header_list>li {
-    padding: 1.5vh;
+    padding: 10px;
     background-color: #BCCE63;
     margin: 5px;
     border-radius: 10px;

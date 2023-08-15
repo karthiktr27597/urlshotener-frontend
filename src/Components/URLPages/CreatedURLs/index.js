@@ -2,23 +2,35 @@ import React, { useEffect, useState } from 'react';
 import { findAllDataApi } from '../../Api';
 import Header from '../../Header';
 import './index.css'
+import { useNavigate } from 'react-router-dom';
 
 function CreatedURLs() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     const getData = async () => {
         try {
-            const response = await findAllDataApi()
+            const token = localStorage.getItem("token")
+            const config = { headers: { "x-auth-token": token } }
+            const response = await findAllDataApi(config)
             setData([...response.data.data]);
         } catch (err) {
             console.log(err)
+            if (err.response.data.message === "Invalid Authorization") {
+                const confirmed = window.confirm("Please login to continue")
+                if (confirmed) {
+                    navigate("/login")
+                } else {
+                    navigate("/urlshortener")
+                }
+            }
         }
     }
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [data])
 
 
     return (

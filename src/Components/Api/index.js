@@ -1,8 +1,6 @@
 import axios from "axios"
 
-// const email = localStorage.getItem("email")
-const token = localStorage.getItem("token")
-const config = { headers: { "x-auth-token": token } }
+
 
 const url = "http://localhost:9000"
 
@@ -32,17 +30,17 @@ export const passwordresetVerifyApi = async (rtoken, email, payload) => {
     return response
 }
 
-export const longURLApi = async (payload) => {
+export const longURLApi = async (payload, config) => {
     const response = await axios.post(`${url}/url/add`, payload, config)
     return response
 }
 
-export const findPerDayCountApi = async () => {
+export const findPerDayCountApi = async (config) => {
     const response = await axios.get(`${url}/url/today/count`, config)
     return response
 }
 
-export const findAllDataApi = async () => {
+export const findAllDataApi = async (config) => {
     const response = await axios.get(`${url}/url/get/alldata`, config)
     return response
 }

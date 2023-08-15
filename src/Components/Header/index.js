@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './header.css';
 import avatar from "../Image/User-avatar.svg.png"
 import { useNavigate } from 'react-router-dom';
+import logo from "../Image/Icon.jpg"
 
 
 // Custom hook to handle click outside behavior
@@ -38,15 +39,14 @@ function Header() {
     });
 
     const handleLogout = () => {
-        localStorage.removeItem("email")
-        localStorage.removeItem("token")
+        localStorage.clear()
         navigate("/login")
     }
 
     return (
         <div className='header'>
             <div className="header_left">
-                <img className='logo' src='https://www.pngguru.in/storage/uploads/images/Pyramid%20of%20sea%20pebbles%20png%20%7C%20Balance_1661018025_1830568195.webp' alt="logo" onClick={() => navigate("/urlshortener")} />
+                <img className='logo' src={logo} alt="logo" onClick={() => navigate("/urlshortener")} />
                 <h2 onClick={() => navigate("/urlshortener")}>URL Shortener</h2>
             </div>
             <div className="header_center">

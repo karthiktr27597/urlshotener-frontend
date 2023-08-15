@@ -10,8 +10,9 @@ body {
   font-family: 'Roboto', 'Open Sans', 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #f0fdfe;
+  background-color: #dde5ea;
   margin: 0%;
+  overflow: scroll;
 }
 
 /* Apply styles to the main content container */
@@ -38,12 +39,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Style lists with a bit of spacing for readability */
-ul,
-ol {
-  margin-left: 20px;
 }
 
 
