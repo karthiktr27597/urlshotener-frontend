@@ -38,7 +38,7 @@ function CreatedURLs() {
             <div>
                 <Header></Header>
             </div>
-            <div className='AllURLs'>
+            <div className='AllURLs' style={{ margin: "10px" }}>
                 <h1>Created URLs</h1>
                 <div className="table">
                     < table >

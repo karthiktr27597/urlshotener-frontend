@@ -1,6 +1,5 @@
 .AllURLs h1 {
     text-align: center;
-    margin: 10px 0 0 0;
     min-width: 700px;
 }
 
@@ -15,5 +14,4 @@ td {
 .table {
     display: flex;
     justify-content: center;
-    margin: 10px;
 }
