@@ -33,14 +33,18 @@ function Passwordreset() {
     const handlePasswordreset = async (e) => {
         try {
             e.preventDefault();
-            console.log(rtoken, email);
+            //  console.log(rtoken, email);
             const response = await passwordresetVerifyApi(rtoken, email, state);
             console.log(response);
             alert("Password reseted successfully")
+            localStorage.setItem("email", email);
+            localStorage.setItem("token", rtoken);
             navigate("/urlshortener")
-
         } catch (err) {
             console.log(err);
+            if (err.response.data.message = "Invalid link") {
+                alert("link expired")
+            }
         }
     }
 

@@ -17,10 +17,9 @@ body {
 .emailverify button {
     width: auto;
     border-radius: 5px;
-}
-
-.emailverify button {
-    background-color: #bcce6387;
+    background-color: #94b104c1;
+    height: 45px;
+    width: 150px;
 }
 
 
