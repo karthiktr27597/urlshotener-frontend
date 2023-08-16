@@ -15,3 +15,7 @@ td {
     display: flex;
     justify-content: center;
 }
+
+.AllURLs {
+    margin: 0 10px;
+}
