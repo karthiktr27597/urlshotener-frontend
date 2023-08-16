@@ -20,7 +20,7 @@ function Emailverify() {
         } catch (err) {
             console.log(err);
             setDisable(true);
-            alert("Invalid email")
+            alert(err.response.data.message)
         }
     }
 
