@@ -53,8 +53,8 @@ function CreatedURLs() {
                             data.map((val, index, arr) => (
                                 <tbody key={val.shorturl}>
                                     <tr>
-                                        <td><a href={val.longurl}>{val.longurl}</a></td>
-                                        <td><a href={val.shorturl}>https://urlshortener-backend-qyy5.onrender.com/{val.shorturl}</a></td>
+                                        <td><a href={val.longurl} target='_blank'>{val.longurl}</a></td>
+                                        <td><a href={val.shorturl} target='_blank'>https://urlshortener-backend-qyy5.onrender.com/{val.shorturl}</a></td>
                                         <td>{val.visitedhistory.length}</td>
                                     </tr>
                                 </tbody>
