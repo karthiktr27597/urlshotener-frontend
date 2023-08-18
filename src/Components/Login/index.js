@@ -29,8 +29,6 @@ function Login() {
     const navigate = useNavigate();
 
     const handleTypeing = (e) => {
-        console.log(state);
-        console.log(e);
         dispatch({ type: "TYPING", field: e.target.type, payload: e.target.value })
     }
 
