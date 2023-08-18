@@ -14,7 +14,7 @@ function CreatedURLs() {
             const token = localStorage.getItem("token")
             const config = { headers: { "x-auth-token": token } }
             const response = await findAllDataApi(config)
-            setData([...response.data.data]);
+            setData(response.data.data);
         } catch (err) {
             // console.log(err)
             if (err.response.data.message === "Invalid Authorization") {
@@ -54,7 +54,7 @@ function CreatedURLs() {
                                 <tbody key={val.shorturl}>
                                     <tr>
                                         <td><a href={val.longurl} target='_blank'>{val.longurl}</a></td>
-                                        <td><a href={val.longurl} target='_blank'>https://urlshortener-backend-qyy5.onrender.com/{val.shorturl}</a></td>
+                                        <td><a target='_blank'>https://urlshortener-backend-qyy5.onrender.com/{val.shorturl}</a></td>
                                         <td>{val.visitedhistory.length}</td>
                                     </tr>
                                 </tbody>
