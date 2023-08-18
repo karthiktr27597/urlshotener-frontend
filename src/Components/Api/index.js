@@ -1,9 +1,7 @@
 import axios from "axios"
 
 
-// const url = "https://urlshortener-backend-qyy5.onrender.com"
-
-const url = "https://localhost:9000"
+const url = "https://urlshortener-backend-qyy5.onrender.com"
 
 
 export const singUpApi = async (payload) => {
