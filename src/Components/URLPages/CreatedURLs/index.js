@@ -32,6 +32,10 @@ function CreatedURLs() {
         getData()
     }, [])
 
+    const handleOnClick = (e) => {
+        window.open(e.target.value)
+    }
+
 
     return (
         <div>
@@ -54,7 +58,7 @@ function CreatedURLs() {
                                 <tbody key={val.shorturl}>
                                     <tr>
                                         <td><a href={val.longurl} target='_blank'>{val.longurl}</a></td>
-                                        <td onClick={navigate(`https://urlshortener-backend-qyy5.onrender.com/${val.shorturl}`)} style={{ cursor: "pointer" }}><a target='_blank'>`https://urlshortener-backend-qyy5.onrender.com/${val.shorturl}`</a></td>
+                                        <td onClick={(e) => handleOnClick(e)} style={{ cursor: "pointer", textDecoration: "underline" }}><p>`https://urlshortener-backend-qyy5.onrender.com/${val.shorturl}`</p></td>
                                         <td>{val.visitedhistory.length}</td>
                                     </tr>
                                 </tbody>
