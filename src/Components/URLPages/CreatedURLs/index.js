@@ -54,7 +54,7 @@ function CreatedURLs() {
                                 <tbody key={val.shorturl}>
                                     <tr>
                                         <td><a href={val.longurl} target='_blank'>{val.longurl}</a></td>
-                                        <td><a target='_blank'>https://urlshortener-backend-qyy5.onrender.com/{val.shorturl}</a></td>
+                                        <td onClick={navigate(`https://urlshortener-backend-qyy5.onrender.com/${val.shorturl}`)} style={{ cursor: "pointer" }}><a target='_blank'>`https://urlshortener-backend-qyy5.onrender.com/${val.shorturl}`</a></td>
                                         <td>{val.visitedhistory.length}</td>
                                     </tr>
                                 </tbody>

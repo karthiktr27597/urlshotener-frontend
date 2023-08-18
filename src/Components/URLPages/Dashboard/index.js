@@ -17,7 +17,7 @@ function BarChart() {
             const config = { headers: { "x-auth-token": token } }
             const response = await findPerDayCountApi(config)
             // console.log(response);
-            setData([...response.data.data])
+            setData(response.data.data)
         } catch (err) {
             console.log(err)
             if (err.response.data.message === "Invalid Authorization") {
