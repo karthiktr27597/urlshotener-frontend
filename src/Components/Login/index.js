@@ -35,6 +35,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
+           // console.log(state);
             const response = await loginApi(state)
             console.log(response);
             localStorage.setItem("email", response.data.email)

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { findAllDataApi } from '../../Api';
 import Header from '../../Header';
-import './index.css'
+import './urltable.css'
 import { useNavigate } from 'react-router-dom';
 
 function CreatedURLs() {
@@ -30,7 +30,7 @@ function CreatedURLs() {
 
     useEffect(() => {
         getData()
-    }, [data])
+    }, [])
 
 
     return (
@@ -41,7 +41,7 @@ function CreatedURLs() {
             <div className='AllURLs' style={{ margin: "10px" }}>
                 <h1>Created URLs</h1>
                 <div className="table">
-                    < table >
+                    <table >
                         <thead>
                             <tr>
                                 <th>Long URL</th>
@@ -54,7 +54,7 @@ function CreatedURLs() {
                                 <tbody key={val.shorturl}>
                                     <tr>
                                         <td><a href={val.longurl}>{val.longurl}</a></td>
-                                        <td><a href={val.shorturl}>http://localhost:9000/{val.shorturl}</a></td>
+                                        <td><a href={val.shorturl}>https://urlshortener-backend-qyy5.onrender.com/{val.shorturl}</a></td>
                                         <td>{val.visitedhistory.length}</td>
                                     </tr>
                                 </tbody>
@@ -67,4 +67,4 @@ function CreatedURLs() {
     )
 }
 
-export default CreatedURLs
+export default CreatedURLs;
