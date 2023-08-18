@@ -29,13 +29,15 @@ function Login() {
     const navigate = useNavigate();
 
     const handleTypeing = (e) => {
+        console.log(state);
+        console.log(e);
         dispatch({ type: "TYPING", field: e.target.type, payload: e.target.value })
     }
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-           // console.log(state);
+            // console.log(state);
             const response = await loginApi(state)
             console.log(response);
             localStorage.setItem("email", response.data.email)

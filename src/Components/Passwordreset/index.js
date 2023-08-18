@@ -5,6 +5,7 @@ import { passwordresetVerifyApi } from '../Api'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const reducer = (state, action) => {
+    // console.log("action", action)
     switch (action.type) {
         case "ONCHANGE":
             return {
@@ -12,7 +13,7 @@ const reducer = (state, action) => {
                 [action.field]: action.payload
             }
         default:
-            return state
+            return state;
     }
 }
 
@@ -26,14 +27,12 @@ function Passwordreset() {
     const [state, dispatch] = useReducer(reducer, { newpassword: "", confirmpassword: "" })
 
     const handleTyping = (e) => {
-        e.preventDefault();
-        dispatch({ type: "ONCHANGE", field: e.target.inputname, payload: e.target.value })
+        dispatch({ type: "ONCHANGE", field: e.target.name, payload: e.target.value })
     }
 
     const handlePasswordreset = async (e) => {
         try {
             e.preventDefault();
-            //  console.log(rtoken, email);
             const response = await passwordresetVerifyApi(rtoken, email, state);
             console.log(response);
             alert("Password reseted successfully")
